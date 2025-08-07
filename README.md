@@ -1,5 +1,8 @@
 # Why Projects Often Use Multiple Programming Languages
 
+> [!NOTE]
+> I used GitHub Copilot for formatting and grammatical corrections.
+
 ## Overview
 
 For simplicity, let's start by considering only system-level programming languages that compile down to machine code:
