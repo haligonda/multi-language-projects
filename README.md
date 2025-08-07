@@ -43,3 +43,25 @@ gcc main.c -o main
 ---
 
 *This creates an executable binary that can run independently of the source code.*
+
+## What Happens Under the Hood?
+
+From our perspective, it's just two steps: one to compile the program and another to run it. But under the hood, the compiler is doing a whole lot more.
+
+Internally, **GCC** goes through **4 main phases** to turn a C file into a working executable:
+
+### 1. **Pre-processing**
+This prepares the source code by:
+- Removing comments
+- Expanding macros
+- Resolving conditional compilation
+- **Crucially:** Resolving `#include` statements
+
+When you use `#include`, the C pre-processor replaces that line with the contents of the header file and all the headers that it includes, effectively inserting that code into our file before compilation begins. The output is still C code, but pre-processed for the next step.
+
+### 2. **Compilation** (Source → Assembly)
+Next comes compilation, but **not directly into machine code**. Instead, the pre-processed code is translated into **assembly language** - which contains the instructions that the computer will execute, but still in a human-readable format.
+
+> 💡 **Myth Busted:** A compiler doesn't always convert source code directly into machine code. In fact, many compilers convert source code into an intermediate representation like assembly or even into another programming language.
+
+![Myth Busted](./mythbusters.png)
