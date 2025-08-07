@@ -248,4 +248,28 @@ You see, the different languages involved don't even need to come from the same 
 
 And when it comes to producing the final binary, guess what? **Rust too relies on a linker.**
 
+## Practical Example: Calling Rust from C
 
+So if we want to call a Rust function from C, here's how we do it:
+
+### The Process
+
+1. **Implement the function in Rust**
+2. **Compile the Rust code** into a static or dynamic library
+3. **Declare and use the function** in the C code
+4. **Compile the C code** and link it with the Rust compiled library
+
+### Bidirectional Interoperability
+
+And of course, it works the other way too! We can call **C functions from Rust** just as easily as calling **Rust functions from C**.
+
+---
+
+## Conclusion
+
+The beauty of modern compilation systems lies in their modular design. By understanding that:
+- Different languages compile to **object files**
+- The **linker** combines these object files
+- **Intermediate representations** (like assembly) serve as common ground
+
+We can mix and match programming languages to leverage the strengths of each, creating powerful multi-language projects that are both performant and maintainable.
