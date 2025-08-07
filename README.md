@@ -65,3 +65,30 @@ Next comes compilation, but **not directly into machine code**. Instead, the pre
 > 💡 **Myth Busted:** A compiler doesn't always convert source code directly into machine code. In fact, many compilers convert source code into an intermediate representation like assembly or even into another programming language.
 
 ![Myth Busted](./mythbusters.png)
+
+### 3. **Assembly** (Assembly → Machine Code)
+The third step involves the **assembler**, which is technically another compiler. It takes the human-readable assembly code from the previous phase and translates it into **machine code** - the ones and zeros your CPU understands. The result is called an **object file**.
+
+But here's the catch: **This object file isn't runnable yet.** GCC still needs to resolve the position within the binary where functions will be placed.
+
+#### Example: A Simple Hello World Program
+Let's take an example where we're just printing text to the console:
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    printf("Hello, World!");
+    return 0;
+}
+```
+
+Here, the actual implementation of the `printf` function lives in the **C standard library**. So that library also needs to go through the same compilation steps.
+
+### 4. **Linking** (Object Files → Executable)
+Finally, **linking** happens. At this stage, we may have multiple object files:
+- Some from our code
+- Others from external libraries we included during development
+
+The **linker's job** is to combine all these object files into a single, self-contained executable.
+
